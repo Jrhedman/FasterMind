@@ -27,7 +27,8 @@
         android:layout_marginTop="19dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -39,13 +40,96 @@
         android:layout_alignLeft="@+id/targetWord"
         android:layout_alignStart="@+id/targetWord" />
 
+    <Button
+        android:text="Wrong Letter Wrong Position"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/wrongLwrongPosition"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="24dp" />
+
+    <Button
+        android:text="Right Letter, Wrong Position"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rightLwrongPosition"
+        android:layout_marginBottom="14dp"
+        android:layout_above="@+id/wrongLwrongPosition"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="Right Letter, Right Position "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rightLrightPosition"
+        android:layout_above="@+id/rightLwrongPosition"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="21dp" />
+
+    <Button
+        android:text="Reset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/wrongLwrongPosition"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/reset" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Computers Guess: "
-        android:layout_marginTop="76dp"
+        android:id="@+id/compGuessTitle"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:layout_below="@+id/targetWordTitle"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:id="@+id/compGuessTitle" />
+        android:layout_marginTop="50dp" />
+
+    <TextView
+        android:text="Number of Attempts:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/numGuessesTitle"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:layout_marginTop="60dp"
+        android:layout_below="@+id/compGuessTitle"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="Number of Guesses"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/numOfGuesses"
+        android:layout_alignBaseline="@+id/numGuessesTitle"
+        android:layout_alignBottom="@+id/numGuessesTitle"
+        android:layout_alignLeft="@+id/computerWord"
+        android:layout_alignStart="@+id/computerWord"
+        android:layout_marginLeft="19dp"
+        android:layout_marginStart="19dp" />
+
+    <TextView
+        android:text="Letter Being Checked:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/rightLrightPosition"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="37dp"
+        android:id="@+id/letterBeingCheckedTitle"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+    <TextView
+        android:text="letterBeingChecked"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/letterBeingCheckedTitle"
+        android:layout_alignLeft="@+id/numOfGuesses"
+        android:layout_alignStart="@+id/numOfGuesses"
+        android:id="@+id/letterBeingChecked" />
 </RelativeLayout>
