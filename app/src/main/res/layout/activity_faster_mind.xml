@@ -13,5 +13,39 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:id="@+id/targetWord"
+        android:text="targetWord"
+        android:layout_alignBaseline="@+id/targetWordTitle"
+        android:layout_alignBottom="@+id/targetWordTitle"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Target Word:"
+        android:id="@+id/targetWordTitle"
+        android:layout_marginTop="19dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/computerWord"
+        android:text="compGuess"
+        android:layout_alignBaseline="@+id/compGuessTitle"
+        android:layout_alignBottom="@+id/compGuessTitle"
+        android:layout_alignLeft="@+id/targetWord"
+        android:layout_alignStart="@+id/targetWord" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Computers Guess: "
+        android:layout_marginTop="76dp"
+        android:layout_below="@+id/targetWordTitle"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/compGuessTitle" />
 </RelativeLayout>
