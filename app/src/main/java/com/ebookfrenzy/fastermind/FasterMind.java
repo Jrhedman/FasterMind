@@ -2,6 +2,7 @@ package com.ebookfrenzy.fastermind;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -33,6 +34,29 @@ public class FasterMind extends AppCompatActivity {
         wrongLwrongPosBtn = (Button) findViewById(R.id.wrongLwrongPosition);
         resetBtn = (Button) findViewById(R.id.reset);
     }
+/*-------------------------------Button Calls-----------------------------------------------------*/
+    /*
+        resetGame - called when the RESET button gets pushed.
 
+        this button:
+            - resets the letterBeingChecked TextView to "____"
+            - resets the numOfGuesses TextView to "0"
+            - generates a new random word from the list
+            - displays the new word in targetWord TextView
+            - requests the computer to create an initial guess of what the word is
+            - displays the guessed word in the computerWord TextView
+     */
+    private void resetGame(View view){
 
+    }
+
+    /*
+        rightLrightPosition - called when the RIGHT LETTER RIGHT POSITION button gets pushed.
+
+        this button:
+            -
+     */
+    private void rightLrightPosition(View view){
+
+    }
 }
