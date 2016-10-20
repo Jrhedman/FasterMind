@@ -48,7 +48,8 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="24dp" />
+        android:layout_marginBottom="24dp"
+        android:onClick="wrongLwrongPosition" />
 
     <Button
         android:text="Right Letter, Wrong Position"
@@ -58,7 +59,8 @@
         android:layout_marginBottom="14dp"
         android:layout_above="@+id/wrongLwrongPosition"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:onClick="rightLwrongPosition" />
 
     <Button
         android:text="Right Letter, Right Position "
@@ -68,7 +70,8 @@
         android:layout_above="@+id/rightLwrongPosition"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="21dp" />
+        android:layout_marginBottom="21dp"
+        android:onClick="rightLrightPosition" />
 
     <Button
         android:text="Reset"
@@ -77,7 +80,8 @@
         android:layout_alignBottom="@+id/wrongLwrongPosition"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:id="@+id/reset" />
+        android:id="@+id/reset"
+        android:onClick="resetGame" />
 
     <TextView
         android:layout_width="wrap_content"
