@@ -3,18 +3,18 @@ package com.ebookfrenzy.fastermind;
 /**
  * Class used pulled from: https://sumitpal.wordpress.com/2011/11/15/levenshtein-distance-calculation-using-dynamic-programming-and-forkjoin-framework/
  * and all credit goes to Sumitpal
+ *
+ * Only small edits have been made for our purpose.
  */
 import java.util.*;
 
 public class LevenshteinDistanceUsingDynamicProgramming
 {
 
-    LevenshteinDistanceUsingDynamicProgramming(String str1, String str2)
-    {
-        System.out.println("Lev Distance between : " + str1 + ", " + str2 + " = " + compute(str1, str2));
+    public LevenshteinDistanceUsingDynamicProgramming(){
     }
 
-    protected int compute(String str1, String str2)
+    public int compute(String str1, String str2)
     {
 //	System.out.println(str1 + ", " + str2);
         if ( str1.length() == 0 )
@@ -34,15 +34,5 @@ public class LevenshteinDistanceUsingDynamicProgramming
             int three = 1 + compute(str1, newStr2);
             return Math.min(one, Math.min(two, three));
         }
-    }
-
-    public static void main(String[] args)
-    {
-        String str1 = "BostonMassachusett";
-        String str2 = "BostonMasachusets";
-        if ( args.length >= 2 )
-            new LevenshteinDistanceUsingDynamicProgramming(args[0], args[1]);
-        else
-            new LevenshteinDistanceUsingDynamicProgramming(str1, str2);
     }
 }
