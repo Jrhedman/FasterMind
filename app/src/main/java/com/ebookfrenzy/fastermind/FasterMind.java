@@ -59,4 +59,24 @@ public class FasterMind extends AppCompatActivity {
     private void rightLrightPosition(View view){
 
     }
+
+    /*
+        rightLwrongPosition - called when the RIGHT LETTER WRONG POSITION button gets pushed.
+
+        this button:
+            -
+     */
+    private void rightLwrongPosition(View view){
+
+    }
+
+    /*
+        wrongLwrongPosition - called when the WRONG LETTER WRONG POSITION button gets pushed.
+
+         this button:
+            -
+     */
+    private void wrongLwrongPosition(View view){
+
+    }
 }
