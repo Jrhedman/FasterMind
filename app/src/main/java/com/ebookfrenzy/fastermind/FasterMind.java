@@ -206,7 +206,7 @@ public class FasterMind extends AppCompatActivity {
      */
     private void wrongLwrongPosition(){
      if(letterCounter <= 3) {
-         charFlag[letterCounter] = false;
+         //charFlag[letterCounter] = false;
          letterCounter++;
      }else{
         validateWord();
