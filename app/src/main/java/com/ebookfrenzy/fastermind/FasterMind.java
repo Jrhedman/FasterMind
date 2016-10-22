@@ -1,10 +1,17 @@
 package com.ebookfrenzy.fastermind;
-
+/*
+    @Author Jaoob Hedman, Jacob.Hedman1@gmail.com
+    @Date 10/18/2016
+ */
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.PriorityQueue;
 
 public class FasterMind extends AppCompatActivity {
     //Fields
@@ -19,6 +26,42 @@ public class FasterMind extends AppCompatActivity {
         private Button rightLwrongPosBtn;
         private Button wrongLwrongPosBtn;
         private Button resetBtn;
+
+        private PriorityQueue<Character> firstChar = new PriorityQueue<Character>(10, new Comparator<Character>() {
+            public int compare(Character x, Character y) {
+                if (x < y) return 1;
+                if (x > y) return -1;
+                return 0;
+            }
+        });
+        private PriorityQueue<Character> secondChar = new PriorityQueue<Character>(10, new Comparator<Character>() {
+            public int compare(Character x, Character y) {
+                if (x < y) return 1;
+                if (x > y) return -1;
+                return 0;
+            }
+        });
+        private PriorityQueue<Character> thirdChar = new PriorityQueue<Character>(10, new Comparator<Character>() {
+            public int compare(Character x, Character y) {
+                if (x < y) return 1;
+                if (x > y) return -1;
+                return 0;
+            }
+        });
+        private PriorityQueue<Character> fourthChar = new PriorityQueue<Character>(10, new Comparator<Character>() {
+            public int compare(Character x, Character y) {
+                if (x < y) return 1;
+                if (x > y) return -1;
+                return 0;
+            }
+        });
+
+        private HashMap<Character,Integer> firstCharHash = new HashMap<Character,Integer>();
+        private HashMap<Character,Integer> secondCharHash = new HashMap<Character,Integer>();
+        private HashMap<Character,Integer> thirdCharHash = new HashMap<Character,Integer>();
+        private HashMap<Character,Integer> fourthCharHash = new HashMap<Character,Integer>();
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +76,8 @@ public class FasterMind extends AppCompatActivity {
         rightLwrongPosBtn = (Button) findViewById(R.id.rightLwrongPosition);
         wrongLwrongPosBtn = (Button) findViewById(R.id.wrongLwrongPosition);
         resetBtn = (Button) findViewById(R.id.reset);
+
+        firstChar.
     }
 /*-------------------------------Button Calls-----------------------------------------------------*/
     /*
