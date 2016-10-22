@@ -138,4 +138,14 @@
         android:layout_alignLeft="@+id/numOfGuesses"
         android:layout_alignStart="@+id/numOfGuesses"
         android:id="@+id/letterBeingChecked" />
+
+    <TextView
+        android:text="....."
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/targetWord"
+        android:layout_toRightOf="@+id/wrongLwrongPosition"
+        android:layout_toEndOf="@+id/wrongLwrongPosition"
+        android:layout_marginTop="14dp"
+        android:id="@+id/decWinner" />
 </RelativeLayout>

@@ -17,10 +17,11 @@ import java.util.Random;
 import java.util.StringTokenizer;
 
 import android.util.Log;
-
+import java.util.Random;
 
 public class SimpleDictionary implements FasterMindDictionary {
     private ArrayList<String> words;
+    private Random rand = new Random();
 
     private HashMap<Character,letterWeight> firstCharHash = new HashMap<Character,letterWeight>(26);
     private HashMap<Character,letterWeight> secondCharHash = new HashMap<Character,letterWeight>(26);
@@ -60,7 +61,7 @@ public class SimpleDictionary implements FasterMindDictionary {
             }
         }
     }
-    
+
     public Collection<letterWeight> getFirstHashValues(){
         return firstCharHash.values();
     }
@@ -76,6 +77,15 @@ public class SimpleDictionary implements FasterMindDictionary {
     public Collection<letterWeight> getFourthHashValues(){
         return fourthCharHash.values();
     }
+
+
+
+    public String getRandomWord(){
+       return words.get(rand.nextInt(words.size()));
+
+    }
+
+
 
 
     @Override

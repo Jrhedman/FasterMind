@@ -31,6 +31,10 @@ public class letterWeight {
         public void addWeight(int addedWeight){
             this.weight = getWeight()+ addedWeight;
         }
+    //toString
+        public String toString(){
+            return letter.toString();
+        }
     //compareTo
         public int compareTo(letterWeight other){
             if(this.getWeight() < other.getWeight())

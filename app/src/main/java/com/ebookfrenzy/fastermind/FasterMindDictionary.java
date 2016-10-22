@@ -15,4 +15,5 @@ public interface FasterMindDictionary {
     Collection<letterWeight> getSecondHashValues();
     Collection<letterWeight> getThirdHashValues();
     Collection<letterWeight> getFourthHashValues();
+    String getRandomWord();
 }
