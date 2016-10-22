@@ -60,7 +60,9 @@
         android:layout_above="@+id/wrongLwrongPosition"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:onClick="rightLwrongPosition" />
+        android:onClick="rightLwrongPosition"
+        android:elevation="0dp"
+        android:visibility="invisible" />
 
     <Button
         android:text="Right Letter, Right Position "

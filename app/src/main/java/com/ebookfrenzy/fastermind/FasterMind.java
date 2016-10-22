@@ -3,11 +3,15 @@ package com.ebookfrenzy.fastermind;
     @Author Jaoob Hedman, Jacob.Hedman1@gmail.com
     @Date 10/18/2016
  */
+import android.content.res.AssetManager;
+import java.io.IOException;
+import java.io.InputStream;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Comparator;
 import java.util.HashMap;
@@ -17,6 +21,7 @@ public class FasterMind extends AppCompatActivity {
     //Fields
         private final int WORD_LENGTH = 4;
 
+        private FasterMindDictionary dictionary;
         private TextView targetWord;
         private TextView computerWord;
         private TextView numOfGuesses;
@@ -27,39 +32,13 @@ public class FasterMind extends AppCompatActivity {
         private Button wrongLwrongPosBtn;
         private Button resetBtn;
 
-        private PriorityQueue<Character> firstChar = new PriorityQueue<Character>(10, new Comparator<Character>() {
-            public int compare(Character x, Character y) {
-                if (x < y) return 1;
-                if (x > y) return -1;
-                return 0;
-            }
-        });
-        private PriorityQueue<Character> secondChar = new PriorityQueue<Character>(10, new Comparator<Character>() {
-            public int compare(Character x, Character y) {
-                if (x < y) return 1;
-                if (x > y) return -1;
-                return 0;
-            }
-        });
-        private PriorityQueue<Character> thirdChar = new PriorityQueue<Character>(10, new Comparator<Character>() {
-            public int compare(Character x, Character y) {
-                if (x < y) return 1;
-                if (x > y) return -1;
-                return 0;
-            }
-        });
-        private PriorityQueue<Character> fourthChar = new PriorityQueue<Character>(10, new Comparator<Character>() {
-            public int compare(Character x, Character y) {
-                if (x < y) return 1;
-                if (x > y) return -1;
-                return 0;
-            }
-        });
 
-        private HashMap<Character,Integer> firstCharHash = new HashMap<Character,Integer>();
-        private HashMap<Character,Integer> secondCharHash = new HashMap<Character,Integer>();
-        private HashMap<Character,Integer> thirdCharHash = new HashMap<Character,Integer>();
-        private HashMap<Character,Integer> fourthCharHash = new HashMap<Character,Integer>();
+        private PriorityQueue<letterWeight> firstChar = new PriorityQueue<letterWeight>();
+        private PriorityQueue<letterWeight> secondChar = new PriorityQueue<letterWeight>();
+        private PriorityQueue<letterWeight> thirdChar = new PriorityQueue<letterWeight>();
+        private PriorityQueue<letterWeight> fourthChar = new PriorityQueue<letterWeight>();
+
+
 
 
     @Override
@@ -77,7 +56,20 @@ public class FasterMind extends AppCompatActivity {
         wrongLwrongPosBtn = (Button) findViewById(R.id.wrongLwrongPosition);
         resetBtn = (Button) findViewById(R.id.reset);
 
-        firstChar.
+        AssetManager assetManager = getAssets();
+        try {
+            InputStream inputStream = assetManager.open("words.txt");
+            dictionary = new SimpleDictionary(inputStream);
+        } catch (IOException e) {
+            Toast toast = Toast.makeText(this, "Could not load dictionary", Toast.LENGTH_LONG);
+            toast.show();
+        }
+
+        firstChar.addAll(dictionary.getFirstHashValues());
+        secondChar.addAll(dictionary.getSecondHashValues());
+        thirdChar.addAll(dictionary.getThirdHashValues());
+        fourthChar.addAll(dictionary.getFourthHashValues());
+
     }
 /*-------------------------------Button Calls-----------------------------------------------------*/
     /*
